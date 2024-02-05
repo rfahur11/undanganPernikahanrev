@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import CountdownTimer from "../components/CountdownTimer";
 import LocationMap from "../components/LocationMap";
+import MusicPlayer from "../components/MusicPlayer";
 import "./invitation.css";
+import music from "../assets/music/X2Download.com - Teddy -Instrumental- (320 kbps).mp3";
 import gambar from "../assets/images/cowo.png";
 import cewe from "../assets/images/cewe.png";
 
@@ -11,10 +13,22 @@ const Invitation = () => {
   const navigate = useNavigate(); // Digunakan untuk navigasi
   const params = useParams();
   const guestName = params.guestName.replace("-", " ");
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
 
   // Fungsi untuk membuka undangan
   const handleOpenInvitation = () => {
     setIsOpen(true);
+    setIsPlaying(true); // Mulai memutar musik
+  };
+
+  const togglePlayPause = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
   };
 
   // Kondisional rendering untuk menampilkan sampul atau isi undangan
@@ -24,12 +38,16 @@ const Invitation = () => {
         <h2>Welcome, {guestName}</h2>
         <p>Kami mengundang Anda untuk turut serta dalam perayaan kami.</p>
         <button onClick={handleOpenInvitation}>Buka Undangan</button>
+        <MusicPlayer src={music} />
       </div>
     );
   }
 
   return (
-    <div className="container">
+    <div
+      className="container"
+      style={{ display: isPlaying ? "block" : "none" }}
+    >
       <div className="body">
         <header>
           <h1>Undangan Pernikahan</h1>
@@ -49,6 +67,10 @@ const Invitation = () => {
             serta kerabat sekalian untuk menghadiri acara pernikahan kami:
           </p>
         </section>
+        <button onClick={togglePlayPause}>
+          {isPlaying ? "Pause Musik" : "Play Musik"}
+        </button>
+
         <section id="wedding">
           <h2>Our Wedding</h2>
           <div>
@@ -96,6 +118,12 @@ const Invitation = () => {
           </p>
         </footer>
       </div>
+      {/* Elemen audio tersembunyi untuk kontrol pemutaran */}
+      <audio
+        ref={audioRef}
+        src="../assets/music/X2Download.com - Teddy -Instrumental- (320 kbps).mp3"
+        autoPlay={isPlaying}
+      />
     </div>
   );
 };
