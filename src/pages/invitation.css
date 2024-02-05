@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css?family=Alex+Brush");
+
+/* Reset beberapa default styling */
+body,
+h1,
+h2,
+p,
+button {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f5f5f5; /* Warna latar belakang halaman */
+}
+.nama {
+  font-family: "Alex Brush", cursive;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(0, 41, 8);
+}
+.gambar {
+  width: 90px;
+  height: 90px;
+}
+.salam {
+  font-family: "Alex Brush", cursive;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(0, 3, 10);
+  text-shadow: rgb(0, 0, 0) -9px 3px 7px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.body {
+  background-color: #fff; /* Warna latar belakang isi undangan */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan pada bagian isi undangan */
+  border-radius: 8px; /* Sudut bulat pada bagian isi undangan */
+  overflow: hidden;
+}
+
+header {
+  background-color: #3498db; /* Warna latar belakang header */
+  color: #fff; /* Warna teks header */
+  padding: 10px;
+  text-align: center;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #3498db; /* Warna link navigasi */
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #207ab1; /* Warna link navigasi saat dihover */
+}
+
+#guest {
+  padding: 20px;
+}
+
+#wedding {
+  padding: 20px;
+}
+
+.countdown-timer {
+  text-align: center;
+  padding: 20px;
+}
+
+.location-map {
+  padding: 20px;
+}
+
+footer {
+  background-color: #3498db; /* Warna latar belakang footer */
+  color: #fff; /* Warna teks footer */
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Gaya tombol */
+button {
+  background-color: #3498db; /* Warna latar belakang tombol */
+  color: #fff; /* Warna teks tombol */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #207ab1; /* Warna tombol saat dihover */
+}
