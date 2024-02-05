@@ -6,7 +6,6 @@ import {
   Link,
   useNavigate,
 } from "react-router-dom";
-import "./App.css";
 
 // Komponen undangan
 // import Home from './pages/Home';
